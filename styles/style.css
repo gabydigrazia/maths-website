@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#721c11, #c83f1a);
+  font-family: "Rajdhani", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.header {
+  height: 16vh;
+  padding: 2rem;
+  color: white;
+}
+.header .header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+.header .header-container h2 {
+  font-size: 3rem;
+}
+.header .header-container p {
+  font-size: 1.8rem;
+}
+
+.calculator-container {
+  width: 100vw;
+  height: 74vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculator-container .calculator-card {
+  width: 48rem;
+  height: fit-content;
+  border-radius: 1.6rem;
+  background-color: white;
+  align-items: center;
+  font-size: 3rem 3rem 1rem;
+  margin-bottom: 10rem;
+}
+.calculator-container .calculator-card .calculator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem 3rem 1rem;
+  font-size: 1.4rem;
+}
+.calculator-container .calculator-card .calculator h2 {
+  font-size: 1.8rem;
+}
+.calculator-container .calculator-card .calculator .select {
+  border: none;
+  font-size: 1.4rem;
+  background-color: transparent;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.8rem;
+}
+.calculator-container .calculator-card .calculator .select:focus {
+  outline: none;
+}
+.calculator-container .calculator-card .shapeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+.calculator-container .calculator-card .shapeForm picture {
+  padding: 0 0 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.calculator-container .calculator-card .shapeForm picture img {
+  width: 16rem;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator {
+  display: flex;
+  flex-direction: column;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator label {
+  font-size: 1.8rem;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator .measurement input {
+  width: 79%;
+  height: 36px;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator .measurement select {
+  width: 20%;
+  height: 36px;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator h2 {
+  font-size: 2.6rem;
+  font-font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #c83f1a;
+  text-transform: uppercase;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator h3 {
+  font-size: 1.8rem;
+  color: red;
+  margin-top: 0.5rem;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator .button-actions {
+  padding: 4rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.calculator-container .calculator-card .shapeForm .shape-calculator .button-actions button {
+  padding: 1rem;
+  height: 4.6rem;
+  width: 20rem;
+  border-radius: 2.5rem;
+  border: none;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: #00B176;
+}
+.calculator-container .calculator-card .shapeForm .triangle-measures {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input input {
+  width: 98%;
+  height: 3.6rem;
+  border-radius: 0.5rem;
+}
+.calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input select {
+  height: 3.6rem;
+  font-size: 1.6rem;
+  margin-top: 2.3rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer h2 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+footer picture img {
+  width: 8rem;
+  padding-top: 2rem;
+}
+footer .social-network {
+  position: absolute;
+  right: 20vw;
+  display: inline-flex;
+}
+footer .social-network i {
+  color: white;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .calculator-container .calculator-card {
+    width: 32rem;
+    margin-bottom: 2rem;
+  }
+  .calculator-container .calculator-card .calculator {
+    padding: 2rem 2rem 1rem;
+  }
+  .calculator-container .calculator-card .shapeForm {
+    padding: 2rem;
+  }
+  .calculator-container .calculator-card .shapeForm picture img {
+    width: 12rem;
+  }
+  .calculator-container .calculator-card .shapeForm .shape-calculator .button-actions {
+    padding: 2rem 0 1rem;
+    flex-direction: column;
+    height: 130px;
+  }
+  .calculator-container .calculator-card .shapeForm .shape-calculator .button-actions button {
+    width: 100%;
+  }
+
+  footer {
+    margin: 0 3.5rem 0 2.5rem;
+    justify-content: flex-start;
+  }
+  footer h2 {
+    font-size: 1.8rem;
+  }
+  footer picture img {
+    width: 7rem;
+  }
+  footer .social-network {
+    margin-left: auto;
+    right: 3rem;
+  }
+  footer .social-network i {
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
