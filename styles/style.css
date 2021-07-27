@@ -8,7 +8,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(#721c11, #c83f1a);
+  background-color: #c0c0c0;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -28,118 +28,232 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+/*
 .header {
-  height: 16vh;
-  padding: 2rem;
+    height: 10vh;
+    padding: 2rem;
+    //color: white;
+    color: $primary-text-color;
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        h2 {
+            font-size: 3rem;
+        }
+      /*  p {
+            font-size: 1.8rem;
+        }*/
+/*    }
+}*/
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.main-container .sidenav-container {
+  width: 30vw;
+  padding: 0 4rem;
+  background-color: #483d8b;
   color: white;
 }
-.header .header-container {
+.main-container .sidenav-container .sidenav-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 16vh;
   text-align: center;
+  padding-top: 2rem;
+  /*  p {
+        font-size: 1.8rem;
+    }*/
 }
-.header .header-container h2 {
+.main-container .sidenav-container .sidenav-header i {
+  font-size: 4.8rem;
+}
+.main-container .sidenav-container .sidenav-header h2 {
   font-size: 3rem;
 }
-.header .header-container p {
+.main-container .sidenav-container .sidenav-menu {
+  height: 73vh;
+  padding-top: 6rem;
+}
+.main-container .sidenav-container .sidenav-menu h2 {
+  font-size: 2.4rem;
+  color: #40c1ac;
+  padding-bottom: 2rem;
+}
+.main-container .sidenav-container .sidenav-menu ul li {
+  display: inline-flex;
+  list-style: none;
+  padding: 1.4rem 2rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
   font-size: 1.8rem;
+  font-weight: 600;
 }
-
-.calculator-container {
-  width: 100vw;
-  height: 74vh;
+.main-container .sidenav-container .sidenav-menu ul li i {
+  margin-right: 1rem;
+}
+.main-container .sidenav-container .sidenav-menu ul li .link-selected {
+  color: red;
+}
+.main-container .sidenav-container .sidenav-menu ul li .link-non-selected {
+  color: white;
+}
+.main-container .sidenav-container .sidenav-menu ul li:after {
+  color: red;
+}
+.main-container .sidenav-container .sidenav-footer {
+  height: 10vh;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  background-color: #483d8b;
 }
-.calculator-container .calculator-card {
+.main-container .sidenav-container .sidenav-footer h2 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+.main-container .sidenav-container .sidenav-footer .logo {
+  display: inline-flex;
+}
+.main-container .sidenav-container .sidenav-footer .logo picture img {
+  width: 10rem;
+  padding-top: 2rem;
+}
+.main-container .sidenav-container .sidenav-footer .logo h2 {
+  align-self: center;
+}
+.main-container .sidenav-container .sidenav-footer .social-network {
+  display: inline-flex;
+}
+.main-container .sidenav-container .sidenav-footer .social-network i {
+  color: white;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+.main-container .calculator-container {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #353535;
+}
+.main-container .calculator-container .calculator-card {
   width: 48rem;
   height: fit-content;
   border-radius: 1.6rem;
   background-color: white;
   align-items: center;
   font-size: 3rem 3rem 1rem;
-  margin-bottom: 10rem;
 }
-.calculator-container .calculator-card .calculator {
+.main-container .calculator-container .calculator-card .calculator-title {
+  color: #353535;
+  text-align: center;
+  padding: 2.4rem 0;
+  background-color: #40c1ac;
+  border-radius: 1.6rem 1.6rem 0 0;
+  color: white;
+}
+.main-container .calculator-container .calculator-card .calculator-title h2 {
+  font-size: 3rem;
+}
+.main-container .calculator-container .calculator-card .calculator-title p {
+  font-size: 1.8rem;
+}
+.main-container .calculator-container .calculator-card .calculator {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3rem 3rem 1rem;
-  font-size: 1.4rem;
+  padding: 2rem 3rem 0;
+  font-size: 1.6rem;
 }
-.calculator-container .calculator-card .calculator h2 {
+.main-container .calculator-container .calculator-card .calculator h2 {
   font-size: 1.8rem;
 }
-.calculator-container .calculator-card .calculator .select {
+.main-container .calculator-container .calculator-card .calculator .select {
   border: none;
   font-size: 1.4rem;
   background-color: transparent;
+  color: #353535;
   font-family: "Rajdhani", sans-serif;
   font-size: 1.8rem;
 }
-.calculator-container .calculator-card .calculator .select:focus {
+.main-container .calculator-container .calculator-card .calculator .select:focus {
   outline: none;
 }
-.calculator-container .calculator-card .shapeForm {
+.main-container .calculator-container .calculator-card .shapeForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 3rem;
 }
-.calculator-container .calculator-card .shapeForm picture {
+.main-container .calculator-container .calculator-card .shapeForm picture {
   padding: 0 0 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.calculator-container .calculator-card .shapeForm picture img {
+.main-container .calculator-container .calculator-card .shapeForm picture img {
   width: 16rem;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator {
   display: flex;
   flex-direction: column;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator label {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator label {
   font-size: 1.8rem;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator .measurement input {
-  width: 79%;
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .common-input input {
   height: 36px;
   border-radius: 0.5rem;
-  border: 1px solid;
   margin-top: 0.5rem;
   padding: 1rem;
   font-size: 1.6rem;
+  border: 1px solid #353535;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator .measurement select {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .common-input select {
   width: 20%;
   height: 36px;
   font-size: 1.6rem;
   border-radius: 0.5rem;
+  border: 1px solid #353535;
   background-color: transparent;
+  color: #353535;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator h2 {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .measurement input {
+  width: 79%;
+}
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .discount input {
+  width: 100%;
+}
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator h2 {
   font-size: 2.6rem;
   font-font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  color: #c83f1a;
+  color: #483d8b;
   text-transform: uppercase;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator h3 {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator h3 {
   font-size: 1.8rem;
   color: red;
   margin-top: 0.5rem;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator .button-actions {
-  padding: 4rem 0 1rem;
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .button-actions {
+  padding: 3rem 0 2rem;
   display: flex;
   justify-content: space-between;
 }
-.calculator-container .calculator-card .shapeForm .shape-calculator .button-actions button {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .button-actions button {
   padding: 1rem;
   height: 4.6rem;
   width: 20rem;
@@ -150,59 +264,70 @@ input[type=number] {
   font-weight: bolder;
   letter-spacing: 0.5px;
   color: white;
-  background-color: #00B176;
+  background-color: #40c1ac;
 }
-.calculator-container .calculator-card .shapeForm .triangle-measures {
+.main-container .calculator-container .calculator-card .shapeForm .shape-calculator .button-actions .button-discount {
+  width: 100%;
+}
+.main-container .calculator-container .calculator-card .shapeForm .triangle-measures {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-.calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input {
+.main-container .calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input {
   width: 20%;
   display: flex;
   flex-direction: column;
 }
-.calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input input {
+.main-container .calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input input {
   width: 98%;
   height: 3.6rem;
   border-radius: 0.5rem;
+  color: #353535;
+  border: 1px solid #353535;
 }
-.calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input select {
+.main-container .calculator-container .calculator-card .shapeForm .triangle-measures .triangle-input select {
   height: 3.6rem;
   font-size: 1.6rem;
   margin-top: 2.3rem;
   border-radius: 0.5rem;
   background-color: transparent;
+  color: #353535;
 }
 
+/*
 footer {
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer h2 {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 100;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-}
-footer picture img {
-  width: 8rem;
-  padding-top: 2rem;
-}
-footer .social-network {
-  position: absolute;
-  right: 20vw;
-  display: inline-flex;
-}
-footer .social-network i {
-  color: white;
-  font-size: 2.5rem;
-  margin-right: 1rem;
-}
-
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $purple-color;
+    h2 {
+        font: {
+            family: $branding-font;
+            weight: 100;
+            size: 2rem;
+        }
+        color: white;
+        text-align: center;
+    }
+    picture {
+        img {
+            width: 10rem;
+            padding-top: 2rem;
+        }
+    }
+    .social-network {
+        position: absolute;
+        right: 20vw;
+        display: inline-flex;
+        i {
+            color:white;
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+    }
+}*/
 @media (max-width: 600px) {
   .calculator-container .calculator-card {
     width: 32rem;

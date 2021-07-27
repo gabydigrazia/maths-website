@@ -12,100 +12,163 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <h2>2D Geometry Calculator</h1>
-            <p>Calculate perimeter and area of different geometric figures</p>
-        </div>
-    </header>
-
-    <section class="calculator-container">
-        <div class="calculator-card">
-            <div class="calculator">
-                <h2>Shape</h2>
-                <select class="select" name="select">
-                    <option value="value1">Square</option>
-                    <option value="value2">Triangule</option>
-                    <option value="value3">Circle</option>
-                </select>
+    <div class="main-container">
+        <header class="sidenav-container">
+            <div class="sidenav-header">
+                <i class="material-icons">calculate</i>
+                <h2>Math Calculators</h2>
+                <!--<p>Calculate perimeter and area of different geometric figures</p>-->
             </div>
-            
-            <form id="squareForm" class="shapeForm">
-                <picture>
-                    <img src="https://i.imgur.com/AkfzjTN.png" alt="Square image">
-                </picture>
-                <div class="shape-calculator">
-                    <h2 id="squareResult">Square Calculator</h2>
-                    <label for="squareInput">
-                        Enter square side:
-                    </label>
-                    <div class="measurement">
-                        <input id="squareInput" type="number">
-                        <select id="squareMeasure" name="select">
-                            <option value="mm">mm</option>
-                            <option value="cm">cm</option>
-                            <option value="m">m</option>
-                            <option value="km">km</option>
-                            <option value="in">in</option>
-                            <option value="ft">ft</option>
-                            <option value="yd">yd</option>
-                            <option value="ml">ml</option>
-                        </select> 
-                    </div>
-
-                    <h3 id="errorMessage"></h3>
-                    <div class="button-actions">
-                        <button type="button" onclick="calculateSquarePerimeter()">
-                            Calculate Perimeter
-                        </button>
-                        <button type="button" onclick="calculateSquareArea()">
-                            Calculate Area
-                        </button>
-                    </div>
+            <div class="sidenav-menu">
+                <h2 class="title-color">What would you like to calculate?</h2>
+                <ul class="sidenav-calculator-link">
+                    <li class="geometric"><i class="material-icons">category</i>Geometric Shapes Perimeter and Area</li>
+                    <li class="discount"><i class="material-icons">local_offer</i>Discounts</li>
+                </ul>
+            </div>
+            <div class="sidenav-footer">
+                <div class="logo">
+                    <picture>
+                        <img src="https://i.imgur.com/MLbuDOP.png" alt="">
+                    </picture>
+                    <h2>gaby<b>digrazia</b> - 2021</h2>
                 </div>
-            </form>
-    
-            <form id="triangleForm" class="shapeForm">
-                <picture>
-                    <img src="https://i.imgur.com/V8It7bW.png" alt="Triang;e image">
-                </picture>
-                <div class="shape-calculator">
-                    <h2 id="triangleResult">Triangle Calculator</h2>
-                    <div class="triangle-measures">
-                        <div class="triangle-input">
-                            <label for="triangleInput1">
-                                Side 1:
-                            </label>
-                            <input id="triangleInput1" type="number">
+                <div class="social-network">
+                    <a href="https://www.linkedin.com/in/gaby-di-grazia/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/gabydigrazia" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <section class="calculator-container">
+            <!-- Geometric Shapes Calculator-->
+            <div id="geometricCalculator" class="calculator-card">
+                <div class="calculator-title">
+                    <h2>2D Geometry Calculator</h2>
+                    <p>Calculate perimeter and area of different geometric figures</p>
+                </div>
+                <div class="calculator">
+                    <h3>Shape</h2>
+                    <select class="select" name="select">
+                        <option value="value1">Square</option>
+                        <option value="value2">Triangule</option>
+                        <option value="value3">Circle</option>
+                    </select>
+                </div>
+                
+                <form id="squareForm" class="shapeForm">
+                    <picture>
+                        <img src="https://i.imgur.com/AkfzjTN.png" alt="Square image">
+                    </picture>
+                    <div class="shape-calculator">
+                        <h2 id="squareResult">Square Selected</h2>
+                        <label for="squareInput">
+                            Enter square side:
+                        </label>
+                        <div class="common-input measurement">
+                            <input id="squareInput" type="number">
+                            <select id="squareMeasure" name="select">
+                                <option value="mm">mm</option>
+                                <option value="cm">cm</option>
+                                <option value="m">m</option>
+                                <option value="km">km</option>
+                                <option value="in">in</option>
+                                <option value="ft">ft</option>
+                                <option value="yd">yd</option>
+                                <option value="ml">ml</option>
+                            </select> 
                         </div>
 
-                        <div class="triangle-input">
-                            <label for="triangleInput2">
-                                Side 2:
-                            </label>
-                            <input id="triangleInput2" type="number">
+                        <h3 id="errorMessage"></h3>
+                        <div class="button-actions">
+                            <button type="button" onclick="calculateSquarePerimeter()">
+                                Calculate Perimeter
+                            </button>
+                            <button type="button" onclick="calculateSquareArea()">
+                                Calculate Area
+                            </button>
                         </div>
-    
-                        <div class="triangle-input">
-                            <label for="triangleInput3">
-                                Base:
-                            </label>
-                            <input id="triangleInput3" type="number">
-                        </div>
+                    </div>
+                </form>
+        
+                <form id="triangleForm" class="shapeForm">
+                    <picture>
+                        <img src="https://i.imgur.com/V8It7bW.png" alt="Triang;e image">
+                    </picture>
+                    <div class="shape-calculator">
+                        <h2 id="triangleResult">Triangle Selected</h2>
+                        <div class="triangle-measures">
+                            <div class="triangle-input">
+                                <label for="triangleInput1">
+                                    Side 1:
+                                </label>
+                                <input id="triangleInput1" type="number">
+                            </div>
 
-                        <div class="triangle-input">
-                            <label for="triangleInput4">
-                                Height:
-                            </label>
-                            <input id="triangleInput4" type="number">
-                        </div>
+                            <div class="triangle-input">
+                                <label for="triangleInput2">
+                                    Side 2:
+                                </label>
+                                <input id="triangleInput2" type="number">
+                            </div>
+        
+                            <div class="triangle-input">
+                                <label for="triangleInput3">
+                                    Base:
+                                </label>
+                                <input id="triangleInput3" type="number">
+                            </div>
 
-                        <div class="triangle-input">
-                            <select id="triangleMeasure" name="select">
+                            <div class="triangle-input">
+                                <label for="triangleInput4">
+                                    Height:
+                                </label>
+                                <input id="triangleInput4" type="number">
+                            </div>
+
+                            <div class="triangle-input">
+                                <select id="triangleMeasure" name="select">
+                                    <option value="mm">mm</option>
+                                    <option value="cm">cm</option>
+                                    <option value="m">m</option>
+                                    <option value="km">km</option>
+                                    <option value="in">in</option>
+                                    <option value="ft">ft</option>
+                                    <option value="yd">yd</option>
+                                    <option value="ml">ml</option>
+                                </select>
+                            </div>
+                        
+                        </div>
+                        <h3 id="errorTriangleMsg"></h3>
+                        <div class="button-actions">
+                            <button type="button" onclick="calculateTrianglePerimeter()">
+                                Calculate Perimeter
+                            </button>
+                            <button type="button" onclick="calculateTriangleArea()">
+                                Calculate Area
+                            </button>
+                        </div>
+                    </div>
+                </form>
+        
+                <form id="circleForm" class="shapeForm">
+                    <picture>
+                        <img src="https://i.imgur.com/RJlFC4j.png" alt="Circle image">
+                    </picture>
+                    <div class="shape-calculator">
+                        <h2 id="circleResult">Circle Selected</h2>
+                        <label for="circleInput">
+                            Enter circle radius:
+                        </label>
+                        <div class="common-input measurement">
+                            <input id="circleInput" type="number">
+                            <select id="circleMeasure" name="select">
                                 <option value="mm">mm</option>
                                 <option value="cm">cm</option>
                                 <option value="m">m</option>
@@ -116,67 +179,59 @@
                                 <option value="ml">ml</option>
                             </select>
                         </div>
-                     
-                    </div>
-                    <h3 id="errorTriangleMsg"></h3>
-                    <div class="button-actions">
-                        <button type="button" onclick="calculateTrianglePerimeter()">
-                            Calculate Perimeter
-                        </button>
-                        <button type="button" onclick="calculateTriangleArea()">
-                            Calculate Area
-                        </button>
-                    </div>
-                </div>
-            </form>
-    
-            <form id="circleForm" class="shapeForm">
-                <picture>
-                    <img src="https://i.imgur.com/RJlFC4j.png" alt="Circle image">
-                </picture>
-                <div class="shape-calculator">
-                    <h2 id="circleResult">Circle Calculator</h2>
-                    <label for="circleInput">
-                        Enter circle radius:
-                    </label>
-                    <div class="measurement">
-                        <input id="circleInput" type="number">
-                        <select id="circleMeasure" name="select">
-                            <option value="mm">mm</option>
-                            <option value="cm">cm</option>
-                            <option value="m">m</option>
-                            <option value="km">km</option>
-                            <option value="in">in</option>
-                            <option value="ft">ft</option>
-                            <option value="yd">yd</option>
-                            <option value="ml">ml</option>
-                        </select>
-                    </div>
 
-                    <h3 id="errorCircleMsg"></h3>
-                    <div class="button-actions">
-                        <button type="button" onclick="calculateCirclePerimeter()">
-                            Calculate Perimeter
-                        </button>
-                        <button type="button" onclick="calculateCircleArea()">
-                            Calculate Area
-                        </button>
+                        <h3 id="errorCircleMsg"></h3>
+                        <div class="button-actions">
+                            <button type="button" onclick="calculateCirclePerimeter()">
+                                Calculate Perimeter
+                            </button>
+                            <button type="button" onclick="calculateCircleArea()">
+                                Calculate Area
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
-    </section>
+                </form>
+            </div>
 
-    <footer>
-        <picture>
-            <img src="https://i.imgur.com/MLbuDOP.png" alt="">
-        </picture>
-        <h2>gaby<b>digrazia</b> - 2021</h2>
-        <div class="social-network">
-            <a href="https://www.linkedin.com/in/gaby-di-grazia/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/gabydigrazia" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
+            <!-- Discount Calculator -->
+            <div id="discountCalculator" class="calculator-card">
+                <div class="calculator-title">
+                    <h2>Discount Calculator</h2>
+                    <p>Calculate price you have to pay after discount applied</p>
+                </div>
+
+                <form id="discountForm" class="shapeForm">
+                    <picture>
+                        <img src="https://i.imgur.com/gStsesp.png" alt="Square image">
+                        <!--<img src="https://i.imgur.com/R0oD0iV.png" alt="Square image">-->
+                    </picture>
+                    <div class="shape-calculator">
+                        <h2 id="discountResult">The new price will appear here </h2>
+                        <label for="priceInput">
+                            Enter price:
+                        </label>
+                        <div class="common-input discount">
+                            <input id="priceInput" type="number">
+                        </div>
+                        <!--<h3 id="errorMessagePrice"></h3>-->
+                        <label for="discountInput">
+                            Enter discount:
+                        </label>
+                        <div class="common-input discount">
+                            <input id="discountInput" type="number">
+                        </div>
+                        <h3 id="errorMessageDiscount"></h3>
+                        <div class="button-actions">
+                            <button class="button-discount" type="button" onclick="calculateNewPrice()">
+                                Calculate price with discount
+                            </button>
+                        </div>
+                    </div>
+                </form>
+     
+            </div>
+        </section>
+    </div>
 
     <script src="./geometric-figures.js"></script>
 </body>

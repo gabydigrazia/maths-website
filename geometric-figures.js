@@ -1,6 +1,9 @@
 const PI = Math.PI;
 var squarePerimeterResult =  document.getElementById("squarePerimeterResult");
 
+/** GEOMETRIC CALCULATOR */ 
+
+/* Display the form for the shapw selected */
 document.getElementById("squareForm").style.display = "block";
 document.getElementById("triangleForm").style.display = "none";
 document.getElementById("circleForm").style.display = "none";
@@ -78,6 +81,32 @@ circleInput.addEventListener('click', function(e) {
     let clickEvent = new Event('click');
     document.getElementById('errorCircleMsg').style.display = "none";
 })
+
+
+/** DISCOUNT CALCULATOR */
+
+/* Display the card with the calculator selected in sidenav menu */
+document.getElementById("geometricCalculator").style.display = "block";
+document.getElementById("discountCalculator").style.display = "none";
+/*document.getElementById("circleForm").style.display = "none";
+document.getElementById("errorMessage").style.display = "none";*/
+
+/* Show or hide form depend on the select option selected */
+const selectCalculatorCard = document.querySelector('.sidenav-calculator-link');
+
+selectCalculatorCard.addEventListener('click', (event) => {
+    if (event.target.matches("li.geometric")) {
+        document.getElementById("geometricCalculator").style.display = "block";
+        document.getElementById("discountCalculator").style.display = "none";
+        //  document.getElementById("circleForm").style.display = "none";
+    } else if (event.target.matches("li.discount")) {
+        document.getElementById("geometricCalculator").style.display = "none";
+        document.getElementById("discountCalculator").style.display = "block";
+        //  document.getElementById("circleForm").style.display = "none";
+    }
+});
+
+/* GEOMETRIC CALCULATOR FUNCTIONS */
 
 function squarePerimeter(side) {
     return Number(side) * 4;
@@ -194,5 +223,24 @@ function calculateCircleArea() {
     } else {
         document.getElementById("errorCircleMsg").style.display = "none";
         document.getElementById("circleResult").innerHTML = `The circle area is: ${RESULT} ${CIRCLE_MEASURE}^2`;
+    }
+}
+
+/** DISCOUNT CALCULATOR FUNCTIONS */
+function applyDiscount(PRICE, DISCOUNT) {
+    return PRICE * (100 - DISCOUNT) / 100; 
+}
+
+function calculateNewPrice() {
+    const PRICE = document.getElementById("priceInput").value;
+    const DISCOUNT = document.getElementById("discountInput").value;
+
+    if (!PRICE || !DISCOUNT) {
+        document.getElementById("errorMessageDiscount").innerHTML = 'You must enter price and discount.'
+        document.getElementById("errorMessageDiscount").style.display = "block";
+    } else {
+        const NEW_PRICE = applyDiscount(PRICE, DISCOUNT);
+        document.getElementById("errorMessageDiscount").style.display = "none";
+        document.getElementById("discountResult").innerHTML = `You have to pay: $${NEW_PRICE}`;
     }
 }
