@@ -17,18 +17,25 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <header>
+        <a href="javascript:void(0);" class="icon" onclick="openSidenav()">
+            <i id="menu-icon" class="fa fa-bars"></i>
+            <i id="close-icon" class="fa fa-xmark"></i>
+        </a>
+    </header>
     <div class="main-container">
-        <header class="sidenav-container">
+        <section id="sidenav" class="sidenav-container">
             <div class="sidenav-header">
                 <i class="material-icons">calculate</i>
                 <h2>Math Calculators</h2>
-                <!--<p>Calculate perimeter and area of different geometric figures</p>-->
             </div>
             <div class="sidenav-menu">
                 <h2 class="title-color">What would you like to calculate?</h2>
                 <ul class="sidenav-calculator-link">
-                    <li class="geometric"><i class="material-icons">category</i>Geometric Shapes Perimeter and Area</li>
-                    <li class="discount"><i class="material-icons">local_offer</i>Discounts</li>
+                    <li class="geometric"><a href="./index.html"><i class="material-icons">category</i>Geometric Shapes Perimeter and Area</a></li>
+                    <li class="discount"><a href="./discount.html"><i class="material-icons">local_offer</i>Discounts</a></li>
+                    <li class="statistic"><a href="./statistics.html"><i class="material-icons">local_offer</i>Statistical Calculations</a></li>
                 </ul>
             </div>
             <div class="sidenav-footer">
@@ -43,7 +50,7 @@
                     <a href="https://github.com/gabydigrazia" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-        </header>
+        </section>
 
         <section class="calculator-container">
             <!-- Geometric Shapes Calculator-->
@@ -192,47 +199,10 @@
                     </div>
                 </form>
             </div>
-
-            <!-- Discount Calculator -->
-            <div id="discountCalculator" class="calculator-card">
-                <div class="calculator-title">
-                    <h2>Discount Calculator</h2>
-                    <p>Calculate price you have to pay after discount applied</p>
-                </div>
-
-                <form id="discountForm" class="shapeForm">
-                    <picture>
-                        <img src="https://i.imgur.com/gStsesp.png" alt="Square image">
-                        <!--<img src="https://i.imgur.com/R0oD0iV.png" alt="Square image">-->
-                    </picture>
-                    <div class="shape-calculator">
-                        <h2 id="discountResult">The new price will appear here </h2>
-                        <label for="priceInput">
-                            Enter price:
-                        </label>
-                        <div class="common-input discount">
-                            <input id="priceInput" type="number">
-                        </div>
-                        <!--<h3 id="errorMessagePrice"></h3>-->
-                        <label for="discountInput">
-                            Enter discount:
-                        </label>
-                        <div class="common-input discount">
-                            <input id="discountInput" type="number">
-                        </div>
-                        <h3 id="errorMessageDiscount"></h3>
-                        <div class="button-actions">
-                            <button class="button-discount" type="button" onclick="calculateNewPrice()">
-                                Calculate price with discount
-                            </button>
-                        </div>
-                    </div>
-                </form>
-     
-            </div>
         </section>
     </div>
 
-    <script src="./geometric-figures.js"></script>
+    <script src="./js/geometric-figures.js"></script>
+    <script src="./js/common.js"></script>
 </body>
 </html>

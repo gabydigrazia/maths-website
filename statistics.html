@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Shapes Calculator</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <header>
+        <a href="javascript:void(0);" class="icon" onclick="openSidenav()">
+            <i id="menu-icon" class="fa fa-bars"></i>
+            <i id="close-icon" class="fa fa-xmark"></i>
+        </a>
+    </header>
+    <div class="main-container">
+        <section id="sidenav" class="sidenav-container">
+            <div class="sidenav-header">
+                <i class="material-icons">calculate</i>
+                <h2>Math Calculators</h2>
+            </div>
+            <div class="sidenav-menu">
+                <h2 class="title-color">What would you like to calculate?</h2>
+                <ul class="sidenav-calculator-link">
+                    <li class="geometric"><a href="./index.html"><i class="material-icons">category</i>Geometric Shapes Perimeter and Area</a></li>
+                    <li class="discount"><a href="./discount.html"><i class="material-icons">local_offer</i>Discounts</a></li>
+                    <li class="statistic"><a href="./statistics.html"><i class="material-icons">local_offer</i>Statistical Calculations</a></li>
+                </ul>
+            </div>
+            <div class="sidenav-footer">
+                <div class="logo">
+                    <picture>
+                        <img src="https://i.imgur.com/MLbuDOP.png" alt="">
+                    </picture>
+                    <h2>gaby<b>digrazia</b> - 2021</h2>
+                </div>
+                <div class="social-network">
+                    <a href="https://www.linkedin.com/in/gaby-di-grazia/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/gabydigrazia" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="calculator-container">
+            <!-- Geometric Shapes Calculator-->
+            <div id="geometricCalculator" class="calculator-card">
+                <div class="calculator-title">
+                    <h2>Statistics Calculator</h2>
+                    <p>Calculate mean, median, and mode</p>
+                </div>
+                <div class="calculator">
+                    <h3>Select Statistical Calculation</h2>
+                    <select class="select" name="select">
+                        <option value="value1">Mean</option>
+                        <option value="value2">Median</option>
+                        <option value="value3">Mode</option>
+                    </select>
+                </div>
+                
+                <form id="statisticsForm" class="shapeForm">
+                    <picture>
+                        <img src="https://i.imgur.com/AkfzjTN.png" alt="Square image">
+                    </picture>
+                    <div class="shape-calculator">
+                        <h2 id="statisticResult">Mean Selected</h2>
+                        <label for="squareInput">
+                            Enter numbers separated by commas:
+                        </label>
+                        <div class="common-input discount">
+                            <input id="numbersInput">
+                        </div>
+                        <h3 id="errorMessage"></h3>
+
+                        <h3 id="errorMessage"></h3>
+                        <div class="button-actions">
+                            <button id="meanBtn" class="button-discount" type="button" onclick="calculateMean()">
+                                Calculate Mean
+                            </button>
+                            <button id="medianBtn" class="button-discount" type="button" onclick="calculateMedian()">
+                                Calculate Median
+                            </button>
+                            <button id="modeBtn" class="button-discount" type="button" onclick="calculateMode()">
+                                Calculate Mode
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/statistics.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+</html>

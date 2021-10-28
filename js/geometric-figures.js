@@ -1,13 +1,13 @@
 const PI = Math.PI;
 var squarePerimeterResult =  document.getElementById("squarePerimeterResult");
 
-/** GEOMETRIC CALCULATOR */ 
-
 /* Display the form for the shapw selected */
 document.getElementById("squareForm").style.display = "block";
 document.getElementById("triangleForm").style.display = "none";
 document.getElementById("circleForm").style.display = "none";
 document.getElementById("errorMessage").style.display = "none";
+document.getElementById("menu-icon").style.display = "block";
+document.getElementById("close-icon").style.display = "none";
 
 /* Show or hide form depend on the select option selected */
 const selectShape = document.querySelector('.select');
@@ -82,63 +82,39 @@ circleInput.addEventListener('click', function(e) {
     document.getElementById('errorCircleMsg').style.display = "none";
 })
 
-
-/** DISCOUNT CALCULATOR */
-
-/* Display the card with the calculator selected in sidenav menu */
-document.getElementById("geometricCalculator").style.display = "block";
-document.getElementById("discountCalculator").style.display = "none";
-/*document.getElementById("circleForm").style.display = "none";
-document.getElementById("errorMessage").style.display = "none";*/
-
-/* Show or hide form depend on the select option selected */
-const selectCalculatorCard = document.querySelector('.sidenav-calculator-link');
-
-selectCalculatorCard.addEventListener('click', (event) => {
-    if (event.target.matches("li.geometric")) {
-        document.getElementById("geometricCalculator").style.display = "block";
-        document.getElementById("discountCalculator").style.display = "none";
-        //  document.getElementById("circleForm").style.display = "none";
-    } else if (event.target.matches("li.discount")) {
-        document.getElementById("geometricCalculator").style.display = "none";
-        document.getElementById("discountCalculator").style.display = "block";
-        //  document.getElementById("circleForm").style.display = "none";
-    }
-});
-
 /* GEOMETRIC CALCULATOR FUNCTIONS */
 
-function squarePerimeter(side) {
+const squarePerimeter = side => {
     return Number(side) * 4;
 }
 
-function squareArea(side) {
+const squareArea = side => {
     return Math.pow(side, 2);
 }
 
-function trianglePerimeter(side1, side2, side3) {
+const trianglePerimeter = (side1, side2, side3) => {
     return Number(side1) + Number(side2) + Number(side3);
 }
 
-function triangleArea(base, height) {
+const triangleArea = (base, height) => {
     return base * height / 2;
 }
 
-function circleDiameter(radius) {
+const circleDiameter = radius => {
     console.log('diametro ' + Number(radius)*2)
     return Number(radius) * 2;
 }
 
-function circlePerimeter(radius) {
+const circlePerimeter = radius => {
     const DIAMETER = circleDiameter(radius);
     return Number(DIAMETER) * PI;
 }
 
-function circleArea(radius) {
+const circleArea = radius => {
     return PI * Number(radius) * Number(radius);
 }
 
-function calculateSquarePerimeter() {
+const calculateSquarePerimeter = () => {
     const SQUARE_SIDE = document.getElementById("squareInput").value;
     const SQUARE_MEASURE = document.getElementById("squareMeasure").value;
 
@@ -152,7 +128,7 @@ function calculateSquarePerimeter() {
     }
 }
 
-function calculateSquareArea() {
+const calculateSquareArea = () => {
     const SQUARE_SIDE = document.getElementById("squareInput").value;
     const SQUARE_MEASURE = document.getElementById("squareMeasure").value;
 
@@ -166,7 +142,7 @@ function calculateSquareArea() {
     }
 }
  
-function calculateTrianglePerimeter() {
+const calculateTrianglePerimeter = () => {
     const TRIANGLE_SIDE1 = document.getElementById("triangleInput1").value;
     const TRIANGLE_SIDE2 = document.getElementById("triangleInput2").value;
     const TRIANGLE_SIDE3 = document.getElementById("triangleInput3").value;
@@ -183,7 +159,7 @@ function calculateTrianglePerimeter() {
     }
 }
 
-function calculateTriangleArea() {
+const calculateTriangleArea = () => {
     const BASE = document.getElementById("triangleInput3").value;
     const HEIGHT = document.getElementById("triangleInput4").value;
     const TRIANGLE_MEASURE = document.getElementById("triangleMeasure").value;
@@ -198,7 +174,7 @@ function calculateTriangleArea() {
     }
 }
 
-function calculateCirclePerimeter() {
+const calculateCirclePerimeter = () => {
     const RADIUS = document.getElementById("circleInput").value;
     const RESULT = circlePerimeter(RADIUS).toFixed(2);
     const CIRCLE_MEASURE = document.getElementById("circleMeasure").value;
@@ -212,7 +188,7 @@ function calculateCirclePerimeter() {
     }
 }
 
-function calculateCircleArea() {
+const calculateCircleArea = () => {
     const RADIUS = document.getElementById("circleInput").value;
     const RESULT = circleArea(RADIUS).toFixed(2);
     const CIRCLE_MEASURE = document.getElementById("circleMeasure").value;
@@ -223,24 +199,5 @@ function calculateCircleArea() {
     } else {
         document.getElementById("errorCircleMsg").style.display = "none";
         document.getElementById("circleResult").innerHTML = `The circle area is: ${RESULT} ${CIRCLE_MEASURE}^2`;
-    }
-}
-
-/** DISCOUNT CALCULATOR FUNCTIONS */
-function applyDiscount(PRICE, DISCOUNT) {
-    return PRICE * (100 - DISCOUNT) / 100; 
-}
-
-function calculateNewPrice() {
-    const PRICE = document.getElementById("priceInput").value;
-    const DISCOUNT = document.getElementById("discountInput").value;
-
-    if (!PRICE || !DISCOUNT) {
-        document.getElementById("errorMessageDiscount").innerHTML = 'You must enter price and discount.'
-        document.getElementById("errorMessageDiscount").style.display = "block";
-    } else {
-        const NEW_PRICE = applyDiscount(PRICE, DISCOUNT);
-        document.getElementById("errorMessageDiscount").style.display = "none";
-        document.getElementById("discountResult").innerHTML = `You have to pay: $${NEW_PRICE}`;
     }
 }
